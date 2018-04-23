@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Audio player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Audio Player</h1>
+    </header>
+    <main>
+        <div class="audioPlayer">
+            <button id="prevSong" class="prevSongButton"></button>
+            <button id="playAudio" class="playSongButton"></button>
+            <button id="pauseAudio" class="pauseSongButton"></button>
+            <button id="nextSong" class="nextSongButton"></button>
+            <input id="songVolume" min="0" max="1" step="0.05" value="1" type="range">
+            <div class="progressBar">
+                <span id="songTime" class="progress"></span>
+            </div>
+            <select id="songPlaylist" class="select-style">
+                <option value="0">Camila Cabello - Havana</option>
+                <option value="1">AC/DC - Highway to Hell</option>
+                <option value="2">Post Malone - rockstar ft. 21 Savage</option>
+            </select>
+        </div>
+
+        </div>
+    </main>
+
+</body>
+<script src="audioPlayer.js">
+</script>
+
+</html>
