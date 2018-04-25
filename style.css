@@ -1,6 +1,5 @@
 body {
-    /* background: rgb(32, 25, 124) ; */
-    background-image: url('image/bg.jpg')
+    background-image: url('image/bg.jpg');
 }
 
 button {
@@ -11,36 +10,57 @@ button {
     margin-right: 3px;
 }
 
-h1 {
-    text-align: center;
-    font-family: sans-serif;
-    color: rgb(32, 25, 124);
-    background-color: rgb(252, 237, 237);
-    line-height: 50px;
-    width: 400px;
-    margin: auto;
-    border-radius: 5px;
-}
-
 .audioPlayer {
-    margin: 50px auto;
-    width: 400px;
+    margin: auto;
+    width: 550px;
+    height: 160px;
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: space-between;
     background-color: rgb(252, 237, 237);
-    padding: 1%;
     border-radius: 5px;
+    padding-block-end: 50px;
+    background-image: url('image/bg-1.jpg');
+}
+
+.textBox {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: white;
+    background: #283593;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.playlist-style {
+    background: rgb(252, 237, 237);
+    width: 170px;
+    height: 110px;
+    border-right: 1px solid #3F51B5;
+}
+
+.middleBox {
+    height: 100px;
+    width: 200px;
+}
+
+.buttons {
+    margin-left: 20px;
+    margin-top: 10px;
 }
 
 .progressBar {
-    border: 1px solid rgb(32, 25, 124);
-    color: rgb(32, 25, 124);
-    width: 245px;
+    border: 1px solid #3F51B5;
+    color: #283593;
+    width: 160px;
     height: 20px;
     border-radius: 3px;
-    margin-top: 5px;
     text-align: center;
+    margin-left: 13px;
+    margin-top: 10px;
 }
 
 .progress {
@@ -50,29 +70,33 @@ h1 {
 
 .prevSongButton {
     background-image: url('image/prev.png');
+    outline: none;
 }
 
 .playSongButton {
     background-image: url('image/play.png');
+    outline: none;
 }
 
 .pauseSongButton {
     background-image: url('image/pause.png');
+    outline: none;
 }
 
 .nextSongButton {
     background-image: url('image/next.png');
+    outline: none;
 }
 
 .select-style {
-    border: 1px solid rgb(32, 25, 124);
-    width: 120px;
-    height: 25px;
+    border: none;
+    width: 100%;
+    height: 110px;
     border-radius: 3px;
     overflow: hidden;
-    background: none;
-    margin-top: 3px;
-    margin-left: 3px;
+    background-image: url('image/bg-1.jpg');
+    color: #283593;
+    font-family: sans-serif;
 }
 
 .select-style select {
@@ -80,11 +104,27 @@ h1 {
     width: 130%;
     border: none;
     box-shadow: none;
-    background: transparent;
     background-image: none;
     -webkit-appearance: none;
+    outline: none;
 }
 
 .select-style select:focus {
     outline: none;
+}
+
+.slider-wrapper {
+    width: 70px;
+    height: 100px;
+    padding: 0;
+    border-left: 1px solid #3F51B5;
+    padding-bottom: 5px;
+}
+
+.slider-wrapper input {
+    width: 90px;
+    height: 20px;
+    margin-left: 20px;
+    transform-origin: 50px 50px;
+    transform: rotate(-90deg);
 }
