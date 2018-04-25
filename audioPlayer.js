@@ -11,24 +11,23 @@ playlist.push({
     src: "music/3.mp3",
     name: "3"
 });
+const playAudio = document.querySelector('#playAudio'),
+    pauseAudio = document.querySelector('#pauseAudio'),
+    nextSong = document.querySelector('#nextSong'),
+    prevSong = document.querySelector('#prevSong'),
+    volume = document.querySelector('#songVolume'),
+    songTime = document.querySelector('#songTime'),
+    SEC_INTO_MIN = 60,
+    SINGLE_INTO_DECIMAL = 10;
 
-var currentSong = playlist[0].src;
+let currentSong = playlist[0].src;
 MyAudioPlayer.src = currentSong;
 MyAudioPlayer.autoplay = false;
-var arrayNumber = 0;
+let arrayNumber = 0;
 
-var playAudio = document.getElementById('playAudio');
-playAudio.addEventListener('click', function () {
-    MyAudioPlayer.play();
+playAudio.addEventListener('click', () => MyAudioPlayer.play());
 
-});
-
-var pauseAudio = document.getElementById('pauseAudio');
-pauseAudio.addEventListener('click', function () {
-    MyAudioPlayer.pause();
-});
-
-var nextSong = document.getElementById('nextSong');
+pauseAudio.addEventListener('click', () => MyAudioPlayer.pause());
 
 nextSong.addEventListener('click', function () {
     if (arrayNumber < playlist.length - 1) {
@@ -43,7 +42,6 @@ nextSong.addEventListener('click', function () {
     }
 })
 
-var prevSong = document.getElementById('prevSong');
 prevSong.addEventListener('click', function () {
     if (arrayNumber <= playlist.length - 1 && arrayNumber > 0) {
         arrayNumber--;
@@ -53,7 +51,7 @@ prevSong.addEventListener('click', function () {
         arrayNumber = playlist.length - 1;
         MyAudioPlayer.src = playlist[arrayNumber].src;
         MyAudioPlayer.play();
-        alert("playing last song from the playlist")
+        alert("Playing last song from the playlist")
     }
 })
 
@@ -63,16 +61,12 @@ songPlaylist.onchange = function () {
     MyAudioPlayer.play();
 }
 
-var volume = document.getElementById('songVolume');
-volume.addEventListener('change', function () {
-    MyAudioPlayer.volume = volume.value;
-});
+volume.addEventListener('change', () => MyAudioPlayer.volume = volume.value);
 
-var songTime = document.getElementById('songTime');
 MyAudioPlayer.addEventListener('timeupdate', function () {
-    var sec = parseInt(MyAudioPlayer.currentTime % 60);
-    var min = parseInt((MyAudioPlayer.currentTime / 60) % 60);
-    if (sec < 10) {
+    let sec = parseInt(MyAudioPlayer.currentTime % SEC_INTO_MIN);
+    let min = parseInt((MyAudioPlayer.currentTime / SEC_INTO_MIN) % SEC_INTO_MIN);
+    if (sec < SINGLE_INTO_DECIMAL) {
         sec = '0' + sec;
     }
     songTime.innerHTML = min + ':' + sec;
